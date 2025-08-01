@@ -94,8 +94,8 @@ Apply at your own risk.
   "textTrimming": "clip",
   "leftAndRightPaddingSize": 8,
   "spaceBetweenIconAndLabel": 18,
-  "runningIndicatorHeight": 2,
-  "runningIndicatorVerticalOffset": 0,
+  "runningIndicatorHeight": 4,
+  "runningIndicatorVerticalOffset": 4,
   "alwaysShowThumbnailLabels": 1,
   "labelForSingleItem": "%name%",
   "labelForMultipleItems": "[%amount%] %name%"
