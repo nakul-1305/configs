@@ -22,17 +22,17 @@ The goal is to reduce background activity while keeping essential functionality 
 - RasMan (Remote Access Connection Manager)  
   Used for VPN and dial-up connections. Safe as Manual unless you use VPNs frequently.
 
+- SysMain  
+  On SSD systems, SysMain (Superfetch) often adds little benefit and can increase writes.  
+  Setting it to Manual or Disabled is safe.
+
 ### Risky changes (may cause login issues — NOT RECOMMENDED)
 - OneSyncSvc_xxxxx (Sync Host)  
   [reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\OneSyncSvc /v Start /t REG_DWORD /d 3 /f]  
   Setting to Manual prevents it from running at startup but allows Windows to start it if required.  
   Disabling completely (d 4) can cause login or profile sync issues on some systems.  
   Do not disable unless you are certain you don’t need Microsoft account sync.
-
-- SysMain  
-  On SSD systems, SysMain (Superfetch) often adds little benefit and can increase writes.  
-  Setting it to Manual or Disabled is safe.
-
+  
 ---
 
 ## Services set to Disabled
