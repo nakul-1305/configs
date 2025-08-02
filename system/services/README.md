@@ -28,7 +28,7 @@ The goal is to reduce background activity while keeping essential functionality 
 
 ### Risky changes (may cause login issues — NOT RECOMMENDED)
 - OneSyncSvc_xxxxx (Sync Host)  
-  [reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\OneSyncSvc /v Start /t REG_DWORD /d 3 /f]  
+  `[reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\OneSyncSvc /v Start /t REG_DWORD /d 3 /f]`  
   Setting to Manual prevents it from running at startup but allows Windows to start it if required.  
   Disabling completely (d 4) can cause login or profile sync issues on some systems.  
   Do not disable unless you are certain you don’t need Microsoft account sync.
@@ -38,13 +38,13 @@ The goal is to reduce background activity while keeping essential functionality 
 ## Services set to Disabled
 
 - Windows Search  
-  Indexing and Start menu search are disabled. File search will still work, but slower.
+  Indexing and Start menu search are disabled. File search will still work, but slower. Disable only if you have alternative way to search.
 
 - DolbyDAXAPI  
   Disables Dolby audio enhancements. Sound works normally without Dolby effects.
 
 - CDPSvc - Disabled [via services.msc GUI]
-- CDPUserSvc_xxxxx  [reg add "HKLM\SYSTEM\CurrentControlSet\Services\CDPUserSvc" /v Start /t REG_DWORD /d 4 /f]
+- CDPUserSvc_xxxxx  `[reg add "HKLM\SYSTEM\CurrentControlSet\Services\CDPUserSvc" /v Start /t REG_DWORD /d 4 /f]`
   Connected Devices Platform User Service. Handles cross-device sync and shared experiences. Disabling has no impact on local use. 
   CDPSvc is the core Connected Devices Platform service. If you disable CDPSvc in Services.msc, CDPUserSvc instances won’t function anyway. 
   You can note that both are related.
@@ -55,7 +55,7 @@ The goal is to reduce background activity while keeping essential functionality 
 - LenovoFnAndFunctionKeys  
   Lenovo function key management. If hotkeys work without it, disabling is safe.
 
-- Text Input Management Service [reg add "HKLM\SYSTEM\CurrentControlSet\Services\TextInputManagementService" /v Start /t REG_DWORD /d 4 /f] 
+- Text Input Management Service `[reg add "HKLM\SYSTEM\CurrentControlSet\Services\TextInputManagementService" /v Start /t REG_DWORD /d 4 /f]` 
   Disabling this removes touch keyboard, emoji panel, and dictation features. 
   Safe if you only use hardware keyboard and do not need IMEs.
 
